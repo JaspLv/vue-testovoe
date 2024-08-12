@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+  server:
+    build: ./server
+    container_name: server
+    restart: always
+
+  client:
+    build: ./client
+    depends_on:
+      server:
+        condition: service_started
+    restart: always
+    ports:
+      - '3001:3001'
+    environment:
+      NEXT_PUBLIC_BACKEND_URL: http://server:3000

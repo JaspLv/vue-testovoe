@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.title {
+	@apply lg:text-[36px] md:text-[32px] text-[18px] md:font-bold font-semibold;
+}
+
+body {
+	@apply flex flex-col h-screen;
+}
+
+main {
+	@apply flex-grow;
+}
+
+.container-main {
+	@apply mx-auto lg:px-16 px-4;
+}
+
+@layer utilities {
+	.text-balance {
+		text-wrap: balance;
+	}
+}
